@@ -1,0 +1,5 @@
+library(RMySQL)
+conn = dbConnect(user='mysql_dev',password='dEvEl0pEr',dbname='anocript',drv='MySQL')
+query = dbSendQuery(conn,statement="select portrait_score from cumulative where dataset = 'danio_mRNA'")
+data <- fetch(query, n = -1) # n IS THE NUMBER OF ROWS OF DATA TO FETCH, WHERE -1 MEANS ALL ROWS
+
